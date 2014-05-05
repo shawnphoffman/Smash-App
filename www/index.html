@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head class="with-statusbar-overlay">
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <title>Smash Up Organizer</title>
+        <link rel="stylesheet" href="css/framework7.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link class="css" rel="stylesheet" href="css/todo7.css"/>
+        <link class="css" rel="stylesheet" href="fonts/fonts.css"/>
+    </head>
+    <body>
+        <!-- Statusbar overlay-->
+        <div class="statusbar-overlay"></div>
+
+
+        <!-- Views-->
+        <div class="views">
+            <div class="view view-main navbar-fixed">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left"><a href="#" data-popup=".popup-settings" class="link icon-only open-popup"><span class="icon icon-cog2"></span></a></div>
+                        <div class="center sliding">Smash Up Organizer</div>
+                        <div class="right"><a href="#" data-popup=".popup-player" class="link icon-only open-popup"><span class="icon icon-plus"></span></a></div>
+                    </div>
+                </div>
+                <div class="pages">
+                    <div data-page="index" class="page">
+                        <div class="page-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/framework7.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

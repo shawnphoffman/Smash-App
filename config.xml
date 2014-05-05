@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.shawnphoffman.smash-up-organizer" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Smash Up Organizer</name>
+    <description>
+        An unofficial companion application for the popular card game, Smash Up.
+        Organizer is capable of randomizing faction selection as well as score-keeping.
+    </description>
+    <author email="shawn.p.hoffman@gmail.com" href="http://shawnphoffman.com">
+        Shawn Hoffman
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
