@@ -1,48 +1,128 @@
 @font-face {
-	font-family: 'ttr';
-	src:url('ttr.eot?4fnatj');
-	src:url('ttr.eot?#iefix4fnatj') format('embedded-opentype'),
-		url('ttr.woff?4fnatj') format('woff'),
-		url('ttr.ttf?4fnatj') format('truetype'),
-		url('ttr.svg?4fnatj#ttr') format('svg');
+	font-family: 'smash';
+	src:url('smash.eot?-iax5ft');
+	src:url('smash.eot?#iefix-iax5ft') format('embedded-opentype'),
+		url('smash.woff?-iax5ft') format('woff'),
+		url('smash.ttf?-iax5ft') format('truetype'),
+		url('smash.svg?-iax5ft#smash') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'ttr';
+[class^="smash-"], [class*=" smash-"] {
+	font-family: 'smash';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-    font-size: 1.2em;
-    color: white;
+    font-size: 1.5em;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-settings:before {
+.smash-pencil:before {
+	content: "\e00d";
+}
+.smash-pencil2:before {
+	content: "\e00e";
+}
+.smash-pencil3:before {
+	content: "\e00f";
+}
+.smash-pencil4:before {
+	content: "\e011";
+}
+.smash-dice:before {
+	content: "\e050";
+}
+.smash-user-plus:before {
+	content: "\e187";
+}
+.smash-user-plus2:before {
+	content: "\e188";
+}
+.smash-settings:before {
 	content: "\e1db";
 }
-.icon-cog:before {
-	content: "\e1df";
-}
-.icon-cog2:before {
+.smash-cog2:before {
 	content: "\e1e1";
 }
-.icon-cog3:before {
+.smash-cog3:before {
 	content: "\e1e2";
 }
-.icon-cog4:before {
+.smash-cog4:before {
 	content: "\e1e5";
 }
-.icon-plus:before {
+.smash-remove:before {
+	content: "\e250";
+}
+.smash-remove2:before {
+	content: "\e251";
+}
+.smash-list:before {
+	content: "\e299";
+}
+.smash-list2:before {
+	content: "\e29a";
+}
+.smash-list3:before {
+	content: "\e29b";
+}
+.smash-list4:before {
+	content: "\e29d";
+}
+.smash-list5:before {
+	content: "\e29e";
+}
+.smash-grid:before {
+	content: "\e2a0";
+}
+.smash-grid2:before {
+	content: "\e2a1";
+}
+.smash-menu:before {
+	content: "\e2ac";
+}
+.smash-flag:before {
+	content: "\e2d1";
+}
+.smash-flag2:before {
+	content: "\e2d2";
+}
+.smash-flag3:before {
+	content: "\e2d4";
+}
+.smash-flag4:before {
+	content: "\e2d5";
+}
+.smash-bookmark:before {
+	content: "\e2e3";
+}
+.smash-bookmark2:before {
+	content: "\e2e4";
+}
+.smash-bookmarks:before {
+	content: "\e2e5";
+}
+.smash-plus:before {
 	content: "\e376";
 }
-.icon-github:before {
+.smash-arrow-right:before {
+	content: "\e3b1";
+}
+.smash-github:before {
 	content: "\e4ba";
+}
+.smash-html5:before {
+	content: "\e4ea";
+}
+.smash-html52:before {
+	content: "\e4eb";
+}
+.smash-css3:before {
+	content: "\e4ec";
 }

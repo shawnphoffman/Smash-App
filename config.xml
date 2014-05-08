@@ -10,4 +10,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+
+    <preference name="StatusBarBackgroundColor" value="#000000" />
 </widget>
