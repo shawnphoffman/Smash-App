@@ -17,7 +17,7 @@ body {
 }
 
 body.with-popup .statusbar-overlay {
-    background: #444;
+    background: #222;
 }
 @media all and (max-width: 629px) and (max-height: 629px) {
     body.with-popup .statusbar-overlay {
@@ -25,7 +25,7 @@ body.with-popup .statusbar-overlay {
     }
 }
 .statusbar-overlay {
-    background: #444;
+    background: #222;
     color: white;
 }
 
