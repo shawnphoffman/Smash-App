@@ -41,3 +41,105 @@ $$('.panel-right').on('open', function () {
 $$('.panel-left, .panel-right').on('close', function () {
     $$('.statusbar-overlay').removeClass('with-panel-left with-panel-right');
 });
+
+var factions = { 'factions' : [
+    {
+      'name' : 'Robots',
+      'set' : 'base'
+    },
+    {
+      'name' : 'Zombies',
+      'set' : 'base'
+    },
+    {
+      'name' : 'Pirates',
+      'set' : 'base'
+    },
+    {
+      'name' : 'Ninjas',
+      'set' : 'base'
+    },
+    {
+      'name' : 'Tricksters',
+      'set' : 'base'
+    },
+    {
+      'name' : 'Wizards',
+      'set' : 'base'
+    },
+    {
+      'name' : 'Dinosaurs',
+      'set' : 'base'
+    },
+    {
+      'name' : 'Aliens', 
+      'set' : 'base'
+    },
+    {
+      'name' : 'Shapeshifters',
+      'set' : 'Science Fiction Double Feature'
+    },
+    {
+      'name' : 'Super Spies',
+      'set' : 'Science Fiction Double Feature'
+    },
+    {
+      'name' : 'Cyborg Apes',
+      'set' : 'Science Fiction Double Feature'
+    },
+    {
+      'name' : 'Time Travelers',
+      'set' : 'Science Fiction Double Feature'
+    },
+    {
+      'name' : 'Miskatonic University',
+      'set' : 'The Obligatory Cthulhu Set'
+    },
+    {
+      'name' : 'Innsmouth',
+      'set' : 'The Obligatory Cthulhu Set'
+    },
+    {
+      'name' : 'Elder Things',
+      'set' : 'The Obligatory Cthulhu Set'
+    },
+    {
+      'name' : 'Cthulhu Cultists',
+      'set' : 'The Obligatory Cthulhu Set'
+    },
+    {
+      'name' : 'Bear Cavalry',
+      'set' : 'Awesome Level 9000'
+    },
+    {
+      'name' : 'Steampunks',
+      'set' : 'Awesome Level 9000'
+    },
+    {
+      'name' : 'Ghosts',
+      'set' : 'Awesome Level 9000'
+    },
+    {
+      'name' : 'Killer Plants',
+      'set' : 'Awesome Level 9000'
+    }
+  ]
+}
+
+
+
+$('#clearScores').on('click', function(){
+  console.log('ClearScores clicked.');
+});
+
+$('#randomizeFactions').on('click', function(){
+  console.log('RandomizeFactions clicked.');
+});
+
+$('#generalSettings').on('click', function(){
+  console.log('GeneralSettings clicked.');
+});
+
+$('#addPlayerIcon').on('click', function(){
+  console.log('addPlayerIcon clicked.');
+});
