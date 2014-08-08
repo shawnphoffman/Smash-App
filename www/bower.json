@@ -1,0 +1,25 @@
+{
+  "name": "Smash-App",
+  "version": "1.0.0",
+  "homepage": "https://github.com/shawnphoffman/Smash-App",
+  "authors": [
+    "Shawn Hoffman"
+  ],
+  "description": "Companion app for Smash Up board game",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "framework7": "~0.9.3",
+    "requirejs": "~2.1.14",
+    "underscore": "~1.6.0"
+  }
+}

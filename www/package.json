@@ -1,0 +1,25 @@
+{
+  "name": "Smash-App",
+  "version": "1.0.0",
+  "homepage": "https://github.com/shawnphoffman/Smash-App",
+  "description": "Companion app for Smash Up board game",
+  "contributors": [
+    "Shawn Hoffman"
+  ],
+  "scripts": {
+    "test": "grunt --verbose"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "grunt-cli": "0.1.9",
+    "grunt-contrib-jshint": "0.6.3",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-uglify": "~0.5.0"
+  },
+  "optionalDependencies": {
+    "requirejs": "~2.1.14"
+  }
+}

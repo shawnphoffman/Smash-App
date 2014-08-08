@@ -3,3 +3,6 @@ hooks
 merges
 platforms
 plugins
+www/bower_components
+www/node_modules
+.DS_Store

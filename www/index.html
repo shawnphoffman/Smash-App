@@ -1,116 +1,194 @@
 <!DOCTYPE html>
-<html>
-    <head class="with-statusbar-overlay">
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <title>Smash Up Organizer</title>
-        <link rel="stylesheet" href="css/framework7.min.css">
-        <link rel="stylesheet" href="css/index.css">
-        <link class="css" rel="stylesheet" href="fonts/fonts.css"/>
-    </head>
-    <body>
-        <!-- Statusbar overlay-->
-        <div class="statusbar-overlay"></div>
-        <!-- Panels-->
-        <div class="panel-overlay"></div>
-        <div class="panel panel-left panel-reveal">
-            <div class="content-block-title">Actions</div>
-            <div class="list-block">
-                <ul>
-                    <li><a href="#" id="clearScores" class="close-panel item-link">
-                        <div class="item-content warning-item">
-                            <div class="item-media"><i class="icon smash-remove"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Clear Scores</div>
-                            </div>
-                        </div></a>
-                    </li>
-                    <li><a href="#" id="randomizeFactions" class="close-panel item-link">
-                        <div class="item-content">
-                            <div class="item-media"><i class="icon smash-dice"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Randomize Factions</div>
-                            </div>
-                        </div></a>
-                    </li>
-                    <li><a href="#" id="generalSettings" class="close-panel item-link open-popup" data-popup=".popup">
-                        <div class="item-content">
-                            <div class="item-media"><i class="icon smash-cog2"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">General Settings</div>
-                            </div>
-                        </div></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="content-block">
-                <p>This project is available on GitHub <span class="icon smash-github"></span>.</p>
-                <p>Bla bla bla bla</p>
-            </div>
-        </div>
-        <!-- Views-->
-        <div class="views">
-            <div class="view view-main navbar-fixed">
-                <div class="navbar">
-                    <div class="navbar-inner">
-                        <!--<div class="left"><a href="#" data-popup=".popup-settings" class="link icon-only open-popup"><span class="icon icon-cog2"></span></a></div>-->
-                        <div class="left">
-                            <a href="#" class="link icon-only open-panel">
-                                <!--<span class="icon smash-menu"></span>-->
-                                <span class="icon smash-settings"></span>
-                            </a>
-                        </div>
-                        <div class="center sliding">Smash App</div>
-                        <div class="right">
-                            <a href="#" id="addPlayerIcon" data-popup=".popup-player" class="link icon-only open-popup">
-                                <span class="icon smash-user-plus2"></span>
-                            </a>
+<html lang="en">
+<head class="with-statusbar-overlay">
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Smash App</title>
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/smashApp.min.css">
+    <!-- <link class="css" rel="stylesheet" href="css/fonts.css"/> -->
+    <!-- Require JS -->
+    <!-- // <script type="text/javascript" data-main="js/req" src="js/require.js"></script> -->
+    <script type="text/javascript" src="js/require.js"></script>
+    <script>
+      require.config({
+          paths: {
+              "main": "smashApp-built"
+          }
+      });
+      require(["main"]);
+    </script>
+</head>
+<body>
+    <!-- Statusbar overlay-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels-->
+    <div class="panel-overlay"></div>
+    <!-- Left Panel -->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block-title">Factions</div>
+        <div class="list-block">
+            <ul>
+                <li style="background-color: #444;">
+                  <a href="#" id="randomizeFactions" class="close-panel item-link">
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon smash-dice"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Randomize Factions</div>
                         </div>
                     </div>
-                </div>
-                <div class="pages">
-                    <div data-page="index" class="page">
-                        <div class="page-content">
+                  </a>
+                </li>
+                <li style="background-color: #444;">
+                  <a href="#" id="generalSettings" class="close-panel item-link open-popup" data-popup=".popup">
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon smash-gear"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Enable Factions</div>
                         </div>
                     </div>
-                </div>
-            </div>
+                  </a>
+                </li>
+            </ul>
         </div>
-
-
-    <div class="popup">
-      <div class="view navbar-fixed">
-        <div class="page">
-          <div class="navbar">
-            <div class="navbar-inner">
-              <div class="center">Popup Title</div>
-              <div class="right"><a href="#" class="link close-popup">Done</a></div>
-            </div>
-          </div>
-          <div class="page-content">
-            <div class="content-block">
-              <p>Here comes popup. You can put here anything, even independent view with its own navigation. Also not, that by default popup looks a bit different on iPhone/iPod and iPad, on iPhone it is fullscreen.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus mauris leo, eu bibendum neque congue non. Ut leo mauris, eleifend eu commodo a, egestas ac urna. Maecenas in lacus faucibus, viverra ipsum pulvinar, molestie arcu. Etiam lacinia venenatis dignissim. Suspendisse non nisl semper tellus malesuada suscipit eu et eros. Nulla eu enim quis quam elementum vulputate. Mauris ornare consequat nunc viverra pellentesque. Aenean semper eu massa sit amet aliquam. Integer et neque sed libero mollis elementum at vitae ligula. Vestibulum pharetra sed libero sed porttitor. Suspendisse a faucibus lectus.</p>
-              <p>Duis ut mauris sollicitudin, venenatis nisi sed, luctus ligula. Phasellus blandit nisl ut lorem semper pharetra. Nullam tortor nibh, suscipit in consequat vel, feugiat sed quam. Nam risus libero, auctor vel tristique ac, malesuada ut ante. Sed molestie, est in eleifend sagittis, leo tortor ullamcorper erat, at vulputate eros sapien nec libero. Mauris dapibus laoreet nibh quis bibendum. Fusce dolor sem, suscipit in iaculis id, pharetra at urna. Pellentesque tempor congue massa quis faucibus. Vestibulum nunc eros, convallis blandit dui sit amet, gravida adipiscing libero.</p>
-              <p>Morbi posuere ipsum nisl, accumsan tincidunt nibh lobortis sit amet. Proin felis lorem, dictum vel nulla quis, lobortis dignissim nunc. Pellentesque dapibus urna ut imperdiet mattis. Proin purus diam, accumsan ut mollis ac, vulputate nec metus. Etiam at risus neque. Fusce tincidunt, risus in faucibus lobortis, diam mi blandit nunc, quis molestie dolor tellus ac enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum turpis a velit vestibulum pharetra. Vivamus blandit dapibus cursus. Aenean lorem augue, vehicula in eleifend ut, imperdiet quis felis.</p>
-              <p>Duis non erat vel lacus consectetur ultricies. Sed non velit dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel varius mi, a tristique ante. Vivamus eget nibh ac elit tempor bibendum sit amet vitae velit. Proin sit amet dapibus nunc, non porta tellus. Fusce interdum vulputate imperdiet. Sed faucibus metus at pharetra fringilla. Fusce mattis orci et massa congue, eget dapibus ante rhoncus. Morbi semper sed tellus vel dignissim. Cras vestibulum, sapien in suscipit tincidunt, lectus mi sodales purus, at egestas ligula dui vel erat. Etiam cursus neque eu lectus eleifend accumsan vitae non leo. Aliquam scelerisque nisl sed lacus suscipit, ac consectetur sapien volutpat. Etiam nulla diam, accumsan ut enim vel, hendrerit venenatis sem. Vestibulum convallis justo vitae pharetra consequat. Mauris sollicitudin ac quam non congue.</p>
-            </div>
-          </div>
+        <div class="content-block-title">Management</div>
+        <div class="list-block">
+            <ul>
+                <li>
+                  <a href="#" id="reviewScores" class="close-panel item-link">
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon smash-quill"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Review Scores</div>
+                        </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" id="clearScores" class="close-panel item-link">
+                    <div class="item-content warning-item">
+                        <div class="item-media"><i class="icon smash-trash"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Clear Scores</div>
+                        </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" id="clearPlayers" class="close-panel item-link">
+                    <div class="item-content warning-item">
+                        <div class="item-media"><i class="icon smash-trash"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Clear Players</div>
+                        </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" id="clearFactions" class="close-panel item-link">
+                    <div class="item-content warning-item">
+                        <div class="item-media"><i class="icon smash-trash"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Clear Factions</div>
+                        </div>
+                    </div>
+                  </a>
+                </li>
+            </ul>
         </div>
-      </div>
+        <div class="content-block-title">About</div>
+        <div class="content-block">
+            <p>This project is available on GitHub <span class="icon smash-github"></span>.</p>
+            <p>For any issues or concerns, please visit shawnphoffman.com or github.com/shawnphoffman/smash-app</p>
+        </div>
     </div>
 
-        <!-- Scripts -->
+    <!-- Views-->
+    <div class="views">
+        <div class="view view-main navbar-fixed">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!--<div class="left"><a href="#" data-popup=".popup-settings" class="link icon-only open-popup"><span class="icon icon-cog2"></span></a></div>-->
+                    <div class="left">
+                        <a href="#" class="link icon-only open-panel">
+                            <span class="icon smash-settings"></span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Smash App</div>
+                    <div class="right">
+                        <a href="#" id="addPlayerIcon" data-popup=".popup-player" class="link icon-only open-popup">
+                            <span class="icon smash-add"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pages">
+                <div data-page="index" class="page">
+                    <div class="page-content">
+                      <div class="list-block todo-items-list tablet-inset">
+                        <ul class="players">
 
-        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="js/jquery.localize.min.js"></script>
-        <script type="text/javascript" src="js/framework7.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- // Factions Popup -->
+    <div class="popup">
+        <div class="view navbar-fixed">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="center">Enable Factions</div>
+                        <div class="right"><a href="#" class="link close-popup">Done</a></div>
+                    </div>
+                </div>
+                <div class="page-content" id="faction-selection"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates -->
+    <script type="text/template" id="faction-template">
+      <label class="label-checkbox item-content">
+        <input type="checkbox" name="ks-checkbox" class="toggle" value="<%- name %>" <%= enabled ? 'checked="checked"' : '' %>>
+        <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+        <div class="item-inner">
+          <div class="item-title"><%- name %></div>
+        </div>
+      </label>
+    </script>
+    <script type="text/template" id="faction-header-template">
+      <div class="content-block-title"><%- parent %></div>
+      <div class="list-block">
+        <ul id="faction-list" class="<%- parent.split(' ').join('') %>">
+        </ul>
+      </div>
+    </script>
+    <script type="text/template" id="player-template">
+        <div class="label-checkbox item-content swipeout-content player-data" data-name="<%- name.split(' ').join('') %>">
+          <div style="width: 100%; padding: 4px 0px; margin: 10px 0px;">
+            <div class="player-space">
+              <div class="name-space"><%- _(name).capitalize() %></div>
+              <div class="score-space"><%- score %></div>
+            </div>
+            <div class="factions-space factions-<%- name.split(' ').join('') %>">
+
+            </div>
+          </div>
+        </div>
+        <div class="swipeout-actions">
+          <div class="swipeout-actions-inner"><a href="#" class="swipeout-delete">Delete</a></div>
+        </div>
+    </script>
+    <script type="text/template" id="player-faction-template">
+      <div data-color="<%- color %>"><%- name %></div>
+    </script>
+</body>
 </html>
