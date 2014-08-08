@@ -1,4 +1,4 @@
-Smash-App
+Smash-App [![Build Status](https://travis-ci.org/shawnphoffman/Smash-App.svg?branch=master)](https://travis-ci.org/shawnphoffman/Smash-App)
 =========
 
 #### Companion app for the board game, Smash Up, and its related expansions.
