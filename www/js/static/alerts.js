@@ -162,7 +162,7 @@ function(Backbone){
         if (scores.models[i].get('name') == name) {
           var val = scores.models[i].get('score') > 0 ? '+'+scores.models[i].get('score') : scores.models[i].get('score');
           var label = Math.abs(scores.models[i].get('score')) <= 1 ? 'point' : 'points';
-          temp += '<b>Points Revision #' + i + '</b>: ' + val + ' ' + label + '<br />';
+          temp += '<b>Points Revision #' + ((i*1)+1) + '</b>: ' + val + ' ' + label + '<br />';
         }
       }
       if (temp === '') { temp = 'No score history available for '+ name +'.'; }
@@ -173,7 +173,7 @@ function(Backbone){
       for (var i=0; i<scores.length; i++){
         var val = scores.models[i].get('score') > 0 ? '+'+scores.models[i].get('score') : scores.models[i].get('score');
         var label = Math.abs(scores.models[i].get('score')) <= 1 ? 'point' : 'points';
-        temp += '<b>Points Revision #' + i + '</b>: ' + val + ' ' + label + ' to '+ scores.models[i].get('name') +'<br />';
+        temp += '<b>Points Revision #' + ((i*1)+1) + '</b>: ' + val + ' ' + label + ' to '+ scores.models[i].get('name') +'<br />';
       }
       if (temp === '') { temp = 'No score history available.'; }
       SmashApp.alert(temp, 'Score History');

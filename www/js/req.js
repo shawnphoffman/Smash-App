@@ -80,7 +80,7 @@ require([
         for (var i = 0; i < random.length; i++){
           players.models[i].set({'factions':random[i]});
         }
-        
+
         players.persist();
         players.reset(JSON.parse(window.localStorage.players));
         // console.log('randomize ended');
@@ -110,7 +110,7 @@ require([
     // Delete item
     $$('.todo-items-list').on('delete', '.swipeout', function () {
         var name = $$(this).find('.item-content').attr('data-name');
-        // console.log(name);
+        console.log(name);
         players.remove(name);
     });
 
