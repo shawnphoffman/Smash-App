@@ -3,7 +3,7 @@
 <head class="with-statusbar-overlay">
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Smash App</title>
@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="css/smashApp.min.css">
     <!-- <link class="css" rel="stylesheet" href="css/fonts.css"/> -->
     <!-- Require JS -->
-    <!-- // <script type="text/javascript" data-main="js/req" src="js/require.js"></script> -->
+    <!--<script type="text/javascript" data-main="js/req" src="js/require.js"></script>-->
     <script type="text/javascript" src="js/require.js"></script>
     <script>
       require.config({
-          paths: {
-              "main": "smashApp-built"
-          }
+        paths: {
+          "main": "smashApp-built"
+        }
       });
       require(["main"]);
     </script>

@@ -53,7 +53,7 @@ define([
           // console.log('renderView ended');
         },
         remove: function(name){
-          console.log('remove started');
+          // console.log('remove started');
 
           var player = this.getByName(name);
           var list = [];
@@ -65,19 +65,19 @@ define([
             }
           }
           var newScores = _.filter(scores.models, function(score){
-            return score.get('name') !== name;
+            return score.get('name').split(' ').join('') !== name;
           });
-          console.log(scores.models);
-          console.log(newScores);
+          // console.log(scores.models);
+          // console.log(newScores);
           scores.reset(newScores);
 
           players.reset(list);
 
-          console.log('remove ended');
+          // console.log('remove ended');
         },
         getByName: function(name){
          return this.filter(function(val) {
-            return val.get("name") === name;
+            return val.get("name").split(' ').join('') === name;
           });
         },
         clearScores: function(){

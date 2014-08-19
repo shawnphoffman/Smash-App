@@ -4,12 +4,12 @@ function(Backbone, Faction) {
     FactionView = Backbone.View.extend( {
         tagName:  "li",
 
-        className: 'faction',
+        className: 'faction-item',
 
         model: Faction,
 
         events: {
-            'click .toggle' : 'toggle'
+            'click .label-checkbox' : 'toggle'
         },
 
         template: _.template($('#faction-template').html()),

@@ -7,7 +7,14 @@ function(Backbone){
         var player = new Player();
         if (data === undefined || data === '') {
           var num = players.length + 1;
-          player.set({name:'Player '+num});
+          var newName = 'Player ' + num;
+          var tempPlayerNames = _.filter(players.models, function(p){
+            return p.get('name') == newName;
+          });
+          if (tempPlayerNames.length > 0) {
+            newName += "X";
+          }
+          player.set({name: newName});
         } else {
           player.set({name:data.replace(/[^\w]/ig, '')});
         }

@@ -13,7 +13,7 @@ define([
             this.persist();
         });
         this.on('reset', function () {
-            // console.log('score added');
+            // console.log('scorelist reset');
             this.compileScores();
             this.persist();
         });

@@ -7,7 +7,8 @@
         ascii_only: true,
         beautify: false,
         max_line_length: 1000,
-        no_mangle: true
+        no_mangle: true,
+        drop_console: true
     },
     optimizeCss: "none",
     name: 'req',
