@@ -18,7 +18,7 @@ function(Backbone){
         return [];
       }
       var outArray = [];
-      // console.log(_factions);
+      // // console.log(_factions);
       for (var j = 0; j < numPlayers; j++) {
         var tempArray = [];
         //

@@ -3,6 +3,8 @@ function(Backbone){
   var Alerts = Backbone.Model.extend({},
   {
     AddPlayer: function() {
+      // console.log('add player started');
+
       SmashApp.prompt('What is your name?', function(data){
         var player = new Player();
         if (data === undefined || data === '') {
@@ -20,9 +22,11 @@ function(Backbone){
         }
         players.add(player);
       });
+
+      // console.log('add player ended');
     },
     EditPlayer: function(player) {
-      // console.log(player);
+      // console.log('edit player started');
 
       if (player !== undefined) {
         var oldName = player.get('name');
@@ -43,17 +47,24 @@ function(Backbone){
           players.renderView();
         });
       }
+
+      // console.log('edit player ended');
     },
     RenamePlayerScore: function(oldName, newName){
+      // console.log('rename player score started');
+
       scores.forEach(function(score){
         if (score.get('name') == oldName){
           score.set('name', newName);
         }
       });
       scores.persist();
-      players.renderView();
+
+      // console.log('rename player score ended');
     },
     ApplyScores: function(){
+      // console.log('apply scores started');
+
       players.forEach(function(player){
         player.set('score', 0);
       });
@@ -66,14 +77,19 @@ function(Backbone){
       });
       players.persist();
       players.renderView();
+
+      // console.log('apply scores ended');
     },
     AddPoints: function(points, name) {
-      // console.log(name + ' - ' + points);
+      // console.log('add points started');
+
       var point = new Score();
       point.set('score', points);
       point.set('name', name);
       scores.add(point);
-      Alerts.ApplyScores();
+      // Alerts.ApplyScores();
+
+      // console.log('add points ended');
     },
     AddPointAction: function(player){
       SmashApp.actions([
@@ -102,10 +118,16 @@ function(Backbone){
           }},
           {text: 'Add 8 Points', onClick:function(){
             Alerts.AddPoints(8, player.get('name'));
-          }},
-          {text: 'Go Back', onClick:function(){
-            Alerts.BasePlayerAction(player);
-          }},
+          }}
+        ],
+        [
+          {
+            text: 'Go Back',
+            onClick:function(){
+              Alerts.BasePlayerAction(player);
+            },
+            bold: true
+          }
         ]
       ]);
     },
@@ -136,10 +158,16 @@ function(Backbone){
           }},
           {text: 'Remove 8 Points', onClick:function(){
             Alerts.AddPoints(-8, player.get('name'));
-          }},
-          {text: 'Go Back', onClick:function(){
-            Alerts.BasePlayerAction(player);
-          }},
+          }}
+        ],
+        [
+          {
+            text: 'Go Back',
+            onClick:function(){
+              Alerts.BasePlayerAction(player);
+            },
+            bold: true
+          }
         ]
       ]);
     },
@@ -160,10 +188,18 @@ function(Backbone){
           {text:'Edit Name', onClick:function(){
             Alerts.EditPlayer(player);
           }}
+        ],
+        [
+          {
+            text: 'Cancel',
+            bold: true
+          }
         ]
       ]);
     },
     ReviewPointsByName: function(name){
+      // console.log('reviewPointsByName started');
+
       var temp = '';
       for (var i=0; i<scores.length; i++){
         if (scores.models[i].get('name') == name) {
@@ -174,8 +210,12 @@ function(Backbone){
       }
       if (temp === '') { temp = 'No score history available for '+ name +'.'; }
       SmashApp.alert(temp, 'Score History for ' + name);
+
+      // console.log('reviewPointsByName ended');
     },
     ReviewPoints: function(){
+      // console.log('reviewPoints started');
+
       var temp = '';
       for (var i=0; i<scores.length; i++){
         var val = scores.models[i].get('score') > 0 ? '+'+scores.models[i].get('score') : scores.models[i].get('score');
@@ -184,6 +224,8 @@ function(Backbone){
       }
       if (temp === '') { temp = 'No score history available.'; }
       SmashApp.alert(temp, 'Score History');
+
+      // console.log('reviewPoints ended');
     }
   });
   return Alerts;

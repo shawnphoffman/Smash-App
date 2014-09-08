@@ -22,24 +22,28 @@ define([
           });
         },
         updated: function () {
-          // console.log('updated started');
+          // console.log('player updated started');
+
           window.players.persist();
           window.players.renderView();
-          // console.log('updated ended');
+
+          // console.log('player updated ended');
         },
         persist: function() {
-          // console.log('persist started');
+          // console.log('player persist started');
+
           window.localStorage.players = JSON.stringify(this);
-          // console.log('persist ended');
+
+          // console.log('player persist ended');
         },
         renderView: function() {
-          // console.log('renderView started');
+          // console.log('player renderView started');
 
-          $('ul.players').html('');
+          $('.player-data').unbind();
+          $('ul.players').empty();
           var factionTemp = _.template($('#player-faction-template').html());
           players.forEach(function(player){
             var view = new PlayerView({model:player});
-            // console.log(view.render().el);
             $('ul.players').append(view.render().el);
             var playerFactions = player.get('factions');
             if (playerFactions !== undefined && playerFactions !== null) {
@@ -50,10 +54,10 @@ define([
             }
           });
 
-          // console.log('renderView ended');
+          // console.log('player renderView ended');
         },
         remove: function(name){
-          // console.log('remove started');
+          // console.log('player remove started');
 
           var player = this.getByName(name);
           var list = [];
@@ -67,13 +71,11 @@ define([
           var newScores = _.filter(scores.models, function(score){
             return score.get('name').split(' ').join('') !== name;
           });
-          // console.log(scores.models);
-          // console.log(newScores);
           scores.reset(newScores);
 
           players.reset(list);
 
-          // console.log('remove ended');
+          // console.log('player remove ended');
         },
         getByName: function(name){
          return this.filter(function(val) {
@@ -81,17 +83,25 @@ define([
           });
         },
         clearScores: function(){
+          // console.log('clearScores started');
+
           players.forEach(function(player){
             player.set('score', 0);
           });
           scores.clearScores();
           players.updated();
+
+          // console.log('clearScores ended');
         },
         clearFactions: function(){
+          // console.log('clearFactions started');
+
           players.forEach(function(player){
             player.set('factions', null);
           });
           players.updated();
+
+          // console.log('clearFactions ended');
         }
     });
     return PlayerList;
