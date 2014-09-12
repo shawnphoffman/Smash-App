@@ -15,16 +15,16 @@ function(Backbone, Faction) {
         template: _.template($('#faction-template').html()),
 
         toggle: function() {
-          // console.log('faction toggle started');
+          console.log('faction toggle started');
 
             this.model.set('enabled', !this.model.get('enabled'));
             window.factions.persist();
 
-          // console.log('faction toggle ended');
+          console.log('faction toggle ended');
         },
 
         render: function() {
-          // console.log('faction render started');
+          console.log('faction render started');
 
             var temp = this.template(this.model.toJSON());
             this.$el.html(temp);

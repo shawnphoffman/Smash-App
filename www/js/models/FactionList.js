@@ -7,33 +7,33 @@ define([
         url: "js/static/factions.json",
         initialize: function () {
             this.on('reset', function () {
-                // console.log('faction collection reset');
+                console.log('faction collection reset');
                 this.updated();
             });
 
             this.on('fetch', function () {
-                // console.log('faction collection fetched');
+                console.log('faction collection fetched');
                 this.updated();
             });
         },
         updated: function () {
-            // console.log('faction updated started');
+            console.log('faction updated started');
 
             window.factions.persist();
             window.grouped = _.groupBy(window.factions.models, function (unit) { return unit.get("parent"); });
             this.renderView();
 
-            // console.log('faction updated ended');
+            console.log('faction updated ended');
         },
         persist: function () {
-            // console.log('faction persist started');
+            console.log('faction persist started');
 
             window.localStorage.factions = JSON.stringify(this);
 
-            // console.log('faction updated ended');
+            console.log('faction persist ended');
         },
         renderView: function () {
-            // console.log('faction renderView started');
+            console.log('faction renderView started');
 
             $("#faction-selection").empty();
             var headTemp = _.template($('#faction-header-template').html());
@@ -48,7 +48,7 @@ define([
               $("."+faction.get('parent').replace(/[^\w]/ig, '')).append(view.render().el);
             }, this);
 
-            // console.log('faction renderView ended');
+            console.log('faction renderView ended');
         }
     });
     return FactionList;

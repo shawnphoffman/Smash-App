@@ -3,7 +3,7 @@ function(Backbone){
   var Alerts = Backbone.Model.extend({},
   {
     AddPlayer: function() {
-      // console.log('add player started');
+      console.log('add player started');
 
       SmashApp.prompt('What is your name?', function(data){
         var player = new Player();
@@ -23,10 +23,10 @@ function(Backbone){
         players.add(player);
       });
 
-      // console.log('add player ended');
+      console.log('add player ended');
     },
     EditPlayer: function(player) {
-      // console.log('edit player started');
+      console.log('edit player started');
 
       if (player !== undefined) {
         var oldName = player.get('name');
@@ -48,10 +48,10 @@ function(Backbone){
         });
       }
 
-      // console.log('edit player ended');
+      console.log('edit player ended');
     },
     RenamePlayerScore: function(oldName, newName){
-      // console.log('rename player score started');
+      console.log('rename player score started');
 
       scores.forEach(function(score){
         if (score.get('name') == oldName){
@@ -60,10 +60,10 @@ function(Backbone){
       });
       scores.persist();
 
-      // console.log('rename player score ended');
+      console.log('rename player score ended');
     },
     ApplyScores: function(){
-      // console.log('apply scores started');
+      console.log('apply scores started');
 
       players.forEach(function(player){
         player.set('score', 0);
@@ -78,10 +78,10 @@ function(Backbone){
       players.persist();
       players.renderView();
 
-      // console.log('apply scores ended');
+      console.log('apply scores ended');
     },
     AddPoints: function(points, name) {
-      // console.log('add points started');
+      console.log('add points started');
 
       var point = new Score();
       point.set('score', points);
@@ -89,7 +89,7 @@ function(Backbone){
       scores.add(point);
       // Alerts.ApplyScores();
 
-      // console.log('add points ended');
+      console.log('add points ended');
     },
     AddPointAction: function(player){
       SmashApp.actions([
@@ -198,7 +198,7 @@ function(Backbone){
       ]);
     },
     ReviewPointsByName: function(name){
-      // console.log('reviewPointsByName started');
+      console.log('reviewPointsByName started');
 
       var temp = '';
       for (var i=0; i<scores.length; i++){
@@ -211,10 +211,10 @@ function(Backbone){
       if (temp === '') { temp = 'No score history available for '+ name +'.'; }
       SmashApp.alert(temp, 'Score History for ' + name);
 
-      // console.log('reviewPointsByName ended');
+      console.log('reviewPointsByName ended');
     },
     ReviewPoints: function(){
-      // console.log('reviewPoints started');
+      console.log('reviewPoints started');
 
       var temp = '';
       for (var i=0; i<scores.length; i++){
@@ -225,7 +225,7 @@ function(Backbone){
       if (temp === '') { temp = 'No score history available.'; }
       SmashApp.alert(temp, 'Score History');
 
-      // console.log('reviewPoints ended');
+      console.log('reviewPoints ended');
     }
   });
   return Alerts;

@@ -7,37 +7,37 @@ define([
         model: Player,
         initialize: function() {
           this.on('reset', function () {
-              // console.log('player collection reset');
+              console.log('player collection reset');
               this.updated();
           });
 
           this.on('fetch', function () {
-              // console.log('player collection fetched');
+              console.log('player collection fetched');
               this.updated();
           });
 
           this.on('add', function () {
-              // console.log('player added to collection');
+              console.log('player added to collection');
               this.updated();
           });
         },
         updated: function () {
-          // console.log('player updated started');
+          console.log('player updated started');
 
           window.players.persist();
           window.players.renderView();
 
-          // console.log('player updated ended');
+          console.log('player updated ended');
         },
         persist: function() {
-          // console.log('player persist started');
+          console.log('player persist started');
 
           window.localStorage.players = JSON.stringify(this);
 
-          // console.log('player persist ended');
+          console.log('player persist ended');
         },
         renderView: function() {
-          // console.log('player renderView started');
+          console.log('player renderView started');
 
           $('.player-data').unbind();
           $('ul.players').empty();
@@ -54,10 +54,10 @@ define([
             }
           });
 
-          // console.log('player renderView ended');
+          console.log('player renderView ended');
         },
         remove: function(name){
-          // console.log('player remove started');
+          console.log('player remove started');
 
           var player = this.getByName(name);
           var list = [];
@@ -75,7 +75,7 @@ define([
 
           players.reset(list);
 
-          // console.log('player remove ended');
+          console.log('player remove ended');
         },
         getByName: function(name){
          return this.filter(function(val) {
@@ -83,7 +83,7 @@ define([
           });
         },
         clearScores: function(){
-          // console.log('clearScores started');
+          console.log('clearScores started');
 
           players.forEach(function(player){
             player.set('score', 0);
@@ -91,17 +91,17 @@ define([
           scores.clearScores();
           players.updated();
 
-          // console.log('clearScores ended');
+          console.log('clearScores ended');
         },
         clearFactions: function(){
-          // console.log('clearFactions started');
+          console.log('clearFactions started');
 
           players.forEach(function(player){
             player.set('factions', null);
           });
           players.updated();
 
-          // console.log('clearFactions ended');
+          console.log('clearFactions ended');
         }
     });
     return PlayerList;

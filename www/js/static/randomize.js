@@ -13,12 +13,10 @@ function(Backbone){
         }
       }
       if (numPlayers * 2 > _factions.length) {
-        console.warn('not enough factions');
         SmashApp.alert('Not enough enabled factions for randomization.', 'Wait!');
         return [];
       }
       var outArray = [];
-      // // console.log(_factions);
       for (var j = 0; j < numPlayers; j++) {
         var tempArray = [];
         //

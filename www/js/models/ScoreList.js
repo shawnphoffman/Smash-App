@@ -8,35 +8,35 @@ define([
       model: Score,
       initialize: function(){
         this.on('add', function () {
-            // console.log('score added started');
+            console.log('score added started');
 
             this.compileScores();
             this.persist();
 
-            // console.log('score added ended');
+            console.log('score added ended');
         });
         this.on('reset', function () {
-            // console.log('scorelist reset started');
+            console.log('scorelist reset started');
 
             this.compileScores();
             this.persist();
 
-            // console.log('scorelist reset ended');
+            console.log('scorelist reset ended');
         });
       },
       compileScores: function(){
-        // console.log('compileScores started');
+        console.log('compileScores started');
 
         Alerts.ApplyScores();
 
-        // console.log('compileScores ended');
+        console.log('compileScores ended');
       },
       persist: function(){
-        // console.log('score persist started');
+        console.log('score persist started');
 
         window.localStorage.scores = JSON.stringify(this);
 
-        // console.log('score persist ended');
+        console.log('score persist ended');
       },
       clearScores: function(){
         scores.reset(null, {silent:true});

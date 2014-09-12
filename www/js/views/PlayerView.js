@@ -15,7 +15,7 @@ define(['Backbone', 'models/Player', 'static/alerts'],
           template: _.template($('#player-template').html()),
 
           toggle: function() {
-            // console.log('player toggle started');
+            console.log('player toggle started');
 
             var t = $('.swipeout-opened');
             if (t.length > 0){
@@ -25,11 +25,11 @@ define(['Backbone', 'models/Player', 'static/alerts'],
               Alerts.BasePlayerAction(player);
             }
 
-            // console.log('player toggle ended');
+            console.log('player toggle ended');
           },
 
           render: function() {
-            // console.log('player render started');
+            console.log('player render started');
 
             var temp = this.template(this.model.toJSON());
             this.$el.html(temp);
