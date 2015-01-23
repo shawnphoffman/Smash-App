@@ -153,5 +153,31 @@
         "parent"    : "Monster Smash",
         "enabled"   : false,
         "color"     : "yellow"
+    },
+    {
+        "name"      : "Fairies",
+        "parent"    : "Pretty Pretty Smash Up",
+        "enabled"   : false,
+        "color"     : "blue"
+    },
+    {
+        "name"      : "Mythic Horses",
+        "parent"    : "Pretty Pretty Smash Up",
+        "enabled"   : false,
+        "color"     : "cyan",
+        "shortName" : "Horses"
+    },
+    {
+        "name"      : "Kitty Cats",
+        "parent"    : "Pretty Pretty Smash Up",
+        "enabled"   : false,
+        "color"     : "purple",
+        "shortName" : "Kitties"
+    },
+    {
+        "name"      : "Princesses",
+        "parent"    : "Pretty Pretty Smash Up",
+        "enabled"   : false,
+        "color"     : "purple"
     }
 ]
